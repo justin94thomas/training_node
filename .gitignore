@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional build artifacts
+dist/
+build/
+
+# Coverage directory
+coverage/
+
+# IDE files
+.vscode/
+.idea/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# dotenv backups
+.env.backup
