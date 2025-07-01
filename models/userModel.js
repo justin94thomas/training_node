@@ -13,16 +13,16 @@ const db = require('../db/connections');
 // Create a new user
 const createUser = async (name, email, hashedPassword, role = 'user') => {
   const result = await db.query(
-    'INSERT INTO public.users (name, email, password, role) VALUES (?, ?, ?, ?)',
+    `INSERT INTO public.users (name, email, password, role) VALUES ($1, $2, $3, $4)`,
     [name, email, hashedPassword, role]
   );
-  return result.insertId;
+  return result;
 };
 
 // Find user by email
 const findUserByEmail = async (email) => {
-   const result = await db.query('SELECT * FROM public.users WHERE email = ?', email);
-  return result.rows;
+  const result = await db.query('SELECT * FROM public.users WHERE email = $1', [email]);
+  return result.rows[0];
 };
 
 // Find user by ID
