@@ -27,7 +27,7 @@ const findUserByEmail = async (email) => {
 
 // Find user by ID
 const findUserById = async (id) => {
-  const result = await db.query('SELECT id, name, email, role FROM public.users WHERE id = ?', id);
+  const result = await db.query('SELECT id, name, email, role FROM public.users WHERE id = $1', [id]);
   return result.rows;
 };
 

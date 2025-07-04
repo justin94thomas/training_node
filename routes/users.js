@@ -11,7 +11,6 @@ router.post('/login', loginUser);
 router.get('/getAllUsers', getAllUsers)
 
 // Private Routes
-
 router.get('/profile', authenticateUser, getUserProfile);
 // router.get('/', authenticateUser, authorizeRoles('admin'), getAllUsers);
 
